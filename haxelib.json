@@ -1,0 +1,11 @@
+{
+	"name": "google-play-services",
+	"url": "http://www.github.com/player-03/google-play-services",
+	"license": "MIT",
+	"tags": [],
+	"description": "Provides Google Play Services support for OpenFL.",
+	"version": "0.0.1",
+	"releasenote": "Initial release.",
+	"contributors": [ "player_03" ],
+	"dependencies": {}
+}
