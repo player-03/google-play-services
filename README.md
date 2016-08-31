@@ -20,7 +20,7 @@ Next, add it to project.xml:
 
 ## Specific libraries
 
-By default, this only includes the base Google Play Services API, with no features. To enable features or services, set any of these flags:
+This library allows you to choose which parts of the Google Play Services you want to use. To enable features, pick one or more lines from this list, and add them to your project.xml file:
 
 ```xml
 <set name="googlePlus" />
@@ -48,4 +48,4 @@ By default, this only includes the base Google Play Services API, with no featur
 <set name="androidWear" />
 ```
 
-You must set these values above "`<haxelib name="google-play-services" />`."
+You must add these lines above "`<haxelib name="google-play-services" />`," not below.
