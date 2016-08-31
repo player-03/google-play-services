@@ -6,9 +6,6 @@
 	
 	<set name="playServicesVersion" value="9.4.0" unless="playServicesVersion" />
 	
-	<set name="playServicesDependencies"
-		value="compile 'com.google.android.gms:play-services:${playServicesVersion}'" />
-	
 	<!-- Optional -->
 	
 	<set name="playServicesDependencies"

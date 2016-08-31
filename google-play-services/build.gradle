@@ -5,8 +5,7 @@ android {
 	buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
 }
 
-dependencies {
-	::SET_PLAY_SERVICES_DEPENDENCIES::
+dependencies { //::SET_PLAY_SERVICES_DEPENDENCIES::
 }
 
 gradle.buildFinished { buildResult ->
