@@ -2,7 +2,7 @@
 <extension>
 	<!-- Required -->
 	
-	<dependency path="google-play-services" />
+	<dependency name="google-play-services" path="google-play-services" />
 	
 	<set name="playServicesVersion" value="9.4.0" unless="playServicesVersion" />
 	
