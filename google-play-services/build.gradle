@@ -10,8 +10,18 @@ dependencies { //::SET_PLAY_SERVICES_DEPENDENCIES::
 
 gradle.buildFinished { buildResult ->
 	if(buildResult.failure) {
-		println ""
-		println "Please make sure you have Google Play Services version ::SET_PLAY_SERVICES_VERSION::."
-		println "If not, use the Android SDK Manager to download it."
+		for(Throwable cause = buildResult.getFailure().getCause(); cause != null; cause = cause.getCause()) {
+			if(cause instanceof org.gradle.internal.resolve.ModuleVersionNotFoundException) {
+				String message = cause.getMessage()
+				
+				if(message.indexOf("Could not find com.google.android.gms") >= 0) {
+					println "\nPlease use the Android SDK Manager to install version ::SET_PLAY_SERVICES_VERSION:: of the Google Play Services."
+					println "Alternatively, use project.xml to set a different version. For instance:"
+					println "<set name=\"playServicesVersion\" value=\"9.0.0\" />"
+					
+					break
+				}
+			}
+		}
 	}
 }
