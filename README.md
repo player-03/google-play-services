@@ -18,7 +18,7 @@ Next, add it to project.xml:
 <haxelib name="google-play-services" />
 ```
 
-## Specific libraries
+## Choosing libraries
 
 This library allows you to choose which parts of the Google Play Services you want to use. To enable features, pick one or more lines from this list, and add them to your project.xml file:
 
@@ -49,3 +49,18 @@ This library allows you to choose which parts of the Google Play Services you wa
 ```
 
 You must add these lines above "`<haxelib name="google-play-services" />`," not below.
+
+## Support libraries
+
+You can also include support-v4 and/or appcompat-v7:
+
+```xml
+<set name="supportV4" />
+<set name="appcompatV7" />
+```
+
+Not that appcompat-v7 requires API Level 23 or later:
+
+```xml
+<android target-sdk-version="23" />
+```

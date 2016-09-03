@@ -5,6 +5,8 @@
 	<dependency name="google-play-services" path="google-play-services" />
 	
 	<set name="playServicesVersion" value="9.4.0" unless="playServicesVersion" />
+	<set name="supportLibraryVersion" value="23.2.0" unless="supportLibraryVersion" />
+	<set name="appcompatLibraryVersion" value="23.2.0" unless="appcompatLibraryVersion" />
 	
 	<!-- Optional -->
 	
@@ -122,4 +124,14 @@
 	value="${playServicesDependencies}
 	compile 'com.google.android.gms:play-services-wearable:${playServicesVersion}'"
 	if="androidWear" />
+	
+	<set name="playServicesDependencies"
+	value="${playServicesDependencies}
+	compile 'com.android.support:support-v4:${supportLibraryVersion}'"
+	if="supportV4" />
+	
+	<set name="playServicesDependencies"
+	value="${playServicesDependencies}
+	compile 'com.android.support:appcompat-v7:${appcompatLibraryVersion}'"
+	if="appcompatV7" />
 </extension>

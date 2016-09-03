@@ -10,15 +10,24 @@ dependencies { //::SET_PLAY_SERVICES_DEPENDENCIES::
 
 gradle.buildFinished { buildResult ->
 	if(buildResult.failure) {
+		def printWarning = { repository, example ->
+			println "\nPlease use the Android SDK Manager to update the " + repository + " (check under \"Extras\")."
+			println "Alternatively, set a different version in project.xml. For instance:"
+			println example
+		}
+		
 		for(Throwable cause = buildResult.getFailure().getCause(); cause != null; cause = cause.getCause()) {
 			if(cause instanceof org.gradle.internal.resolve.ModuleVersionNotFoundException) {
 				String message = cause.getMessage()
 				
 				if(message.indexOf("Could not find com.google.android.gms") >= 0) {
-					println "\nPlease use the Android SDK Manager to install version ::SET_PLAY_SERVICES_VERSION:: of the Google Play Services."
-					println "Alternatively, use project.xml to set a different version. For instance:"
-					println "<set name=\"playServicesVersion\" value=\"9.0.0\" />"
-					
+					printWarning("Google Repository", "<set name=\"playServicesVersion\" value=\"9.4.0\" />")
+					break
+				} else if(message.indexOf("Could not find com.android.support:appcompat-v7") >= 0) {
+					printWarning("Android Support Repository", "<set name=\"appcompatLibraryVersion\" value=\"23.2.0\" />")
+					break
+				} else if(message.indexOf("Could not find com.android.support:support-v4") >= 0) {
+					printWarning("Android Support Repository", "<set name=\"supportLibraryVersion\" value=\"23.2.0\" />")
 					break
 				}
 			}
