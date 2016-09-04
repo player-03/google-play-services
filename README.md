@@ -48,8 +48,6 @@ This library allows you to choose which parts of the Google Play Services you wa
 <set name="androidWear" />
 ```
 
-You must add these lines above "`<haxelib name="google-play-services" />`," not below.
-
 ## Support libraries
 
 You can also include support-v4 and/or appcompat-v7:

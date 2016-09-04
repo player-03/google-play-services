@@ -5,7 +5,58 @@ android {
 	buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
 }
 
-dependencies { //::SET_PLAY_SERVICES_DEPENDENCIES::
+dependencies {
+	::if SET_GOOGLE_PLUS::
+	compile 'com.google.android.gms:play-services-plus:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if SET_GOOGLE_ACCOUNT_LOGIN::
+	compile 'com.google.android.gms:play-services-auth:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if (SET_GOOGLE_ACTIONS || SET_BASE_CLIENT_LIBRARY)::
+	compile 'com.google.android.gms:play-services-base:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if SET_GOOGLE_ADDRESS_API::
+	compile 'com.google.android.gms:play-services-identity:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if SET_GOOGLE_APP_INDEXING::
+	compile 'com.google.android.gms:play-services-appindexing:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if SET_GOOGLE_APP_INVITES::
+	compile 'com.google.android.gms:play-services-appinvite:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if SET_GOOGLE_ANALYTICS::
+	compile 'com.google.android.gms:play-services-analytics:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if SET_GOOGLE_AWARENESS::
+	compile 'com.google.android.gms:play-services-contextmanager:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if SET_GOOGLE_CAST::
+	compile 'com.google.android.gms:play-services-cast:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if SET_GOOGLE_CLOUD_MESSAGING::
+	compile 'com.google.android.gms:play-services-gcm:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if SET_GOOGLE_DRIVE::
+	compile 'com.google.android.gms:play-services-drive:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if SET_GOOGLE_FIT::
+	compile 'com.google.android.gms:play-services-fitness:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if (SET_GOOGLE_LOCATION || SET_GOOGLE_LOCATION_AND_ACTIVITY_RECOGNITION)::
+	compile 'com.google.android.gms:play-services-location:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if SET_GOOGLE_MAPS::
+	compile 'com.google.android.gms:play-services-maps:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if SET_GOOGLE_MOBILE_ADS::
+	compile 'com.google.android.gms:play-services-ads:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if SET_GOOGLE_PLACES::
+	compile 'com.google.android.gms:play-services-places:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if SET_MOBILE_VISION::
+	compile 'com.google.android.gms:play-services-vision:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if SET_GOOGLE_NEARBY::
+	compile 'com.google.android.gms:play-services-nearby:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if SET_GOOGLE_PANORAMA_VIEWER::
+	compile 'com.google.android.gms:play-services-panorama:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if SET_GOOGLE_PLAY_GAME_SERVICES::
+	compile 'com.google.android.gms:play-services-games:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if SET_SAFETY_NET::
+	compile 'com.google.android.gms:play-services-safetynet:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if SET_ANDROID_PAY::
+	compile 'com.google.android.gms:play-services-wallet:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if SET_ANDROID_WEAR::
+	compile 'com.google.android.gms:play-services-wearable:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if SET_SUPPORT_V4::
+	compile 'com.android.support:support-v4:::SET_SUPPORT_LIBRARY_VERSION::'
+	::end::::if SET_APPCOMPAT_V7::
+	compile 'com.android.support:appcompat-v7:::SET_APPCOMPAT_LIBRARY_VERSION::'
+	::end::
 }
 
 gradle.buildFinished { buildResult ->
