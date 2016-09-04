@@ -1,8 +1,8 @@
 # Google Play Services
 
-Provides Google Play Services support for OpenFL. Unlike SempaiGames/extension-googleplayservices-lib, this library uses Gradle.
+Provides Google Play Services support for OpenFL 4.1.
 
-Currently, this library imports the Google Play Services libraries into your project, but doesn't help you access them.
+This library imports the Google Play Services libraries into your project, but doesn't help you access them.
 
 ## Installation
 
@@ -59,7 +59,7 @@ You can also include support-v4 and/or appcompat-v7:
 <set name="appcompatV7" />
 ```
 
-Not that appcompat-v7 requires API Level 23 or later:
+Note that appcompat-v7 requires API Level 23 or later:
 
 ```xml
 <android target-sdk-version="23" />
