@@ -54,8 +54,30 @@ dependencies {
 	compile 'com.google.android.gms:play-services-wearable:::SET_PLAY_SERVICES_VERSION::'
 	::end::::if (SET_SUPPORT_V4 || SET_SUPPORT_V_4)::
 	compile 'com.android.support:support-v4:::SET_SUPPORT_LIBRARY_VERSION::'
+	::end::::if SET_SUPPORT_COMPAT::
+	compile 'com.android.support:support-compat:::SET_SUPPORT_LIBRARY_VERSION::'
+	::end::::if SET_SUPPORT_CORE_UTILS::
+	compile 'com.android.support:support-core-utils:::SET_SUPPORT_LIBRARY_VERSION::'
+	::end::::if SET_SUPPORT_CORE_UI::
+	compile 'com.android.support:support-core-ui:::SET_SUPPORT_LIBRARY_VERSION::'
+	::end::::if SET_SUPPORT_MEDIA_COMPAT::
+	compile 'com.android.support:support-media-compat:::SET_SUPPORT_LIBRARY_VERSION::'
+	::end::::if SET_SUPPORT_FRAGMENT::
+	compile 'com.android.support:support-fragment:::SET_SUPPORT_LIBRARY_VERSION::'
 	::end::::if (SET_APPCOMPAT_V7 || SET_APPCOMPAT_V_7)::
-	compile 'com.android.support:appcompat-v7:::SET_APPCOMPAT_LIBRARY_VERSION::'
+	compile 'com.android.support:appcompat-v7:::SET_SUPPORT_LIBRARY_VERSION::'
+	::end::::if (SET_CARDVIEW_V7 || SET_CARDVIEW_V_7)::
+	compile 'com.android.support:cardview-v7:::SET_SUPPORT_LIBRARY_VERSION::'
+	::end::::if (SET_GRIDLAYOUT_V7 || SET_GRIDLAYOUT_V_7)::
+	compile 'com.android.support:gridlayout-v7:::SET_SUPPORT_LIBRARY_VERSION::'
+	::end::::if (SET_MEDIAROUTER_V7 || SET_MEDIAROUTER_V_7)::
+	compile 'com.android.support:mediarouter-v7:::SET_SUPPORT_LIBRARY_VERSION::'
+	::end::::if (SET_PALETTE_V7 || SET_PALETTE_V_7)::
+	compile 'com.android.support:palette-v7:::SET_SUPPORT_LIBRARY_VERSION::'
+	::end::::if (SET_RECYCLERVIEW_V7 || SET_RECYCLERVIEW_V_7)::
+	compile 'com.android.support:recyclerview-v7:::SET_SUPPORT_LIBRARY_VERSION::'
+	::end::::if (SET_PREFERENCE_V7 || SET_PREFERENCE_V_7)::
+	compile 'com.android.support:preference-v7:::SET_SUPPORT_LIBRARY_VERSION::'
 	::end::
 }
 
@@ -72,13 +94,10 @@ gradle.buildFinished { buildResult ->
 				String message = cause.getMessage()
 				
 				if(message.indexOf("Could not find com.google.android.gms") >= 0) {
-					printWarning("Google Repository", "<set name=\"playServicesVersion\" value=\"9.4.0\" />")
+					printWarning("Google Repository", "<set name=\"playServicesVersion\" value=\"9.6.1\" />")
 					break
-				} else if(message.indexOf("Could not find com.android.support:appcompat-v7") >= 0) {
-					printWarning("Android Support Repository", "<set name=\"appcompatLibraryVersion\" value=\"23.2.0\" />")
-					break
-				} else if(message.indexOf("Could not find com.android.support:support-v4") >= 0) {
-					printWarning("Android Support Repository", "<set name=\"supportLibraryVersion\" value=\"23.2.0\" />")
+				} else if(message.indexOf("Could not find com.android.support") >= 0) {
+					printWarning("Android Support Repository", "<set name=\"supportLibraryVersion\" value=\"24.2.1\" />")
 					break
 				}
 			}

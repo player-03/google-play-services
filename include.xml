@@ -4,5 +4,4 @@
 	
 	<set name="playServicesVersion" value="9.6.1" unless="playServicesVersion" />
 	<set name="supportLibraryVersion" value="24.2.1" unless="supportLibraryVersion" />
-	<set name="appcompatLibraryVersion" value="24.2.1" unless="appcompatLibraryVersion" />
 </extension>

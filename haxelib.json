@@ -4,8 +4,8 @@
 	"license": "MIT",
 	"tags": [],
 	"description": "Provides Google Play Services support for OpenFL 4.1+.",
-	"version": "1.0.1",
-	"releasenote": "Update libraries.",
+	"version": "1.1.0",
+	"releasenote": "You can now import specific pieces of the support libraries.",
 	"contributors": [ "player_03" ],
 	"dependencies": {}
 }
