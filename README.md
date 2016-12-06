@@ -13,6 +13,12 @@ By default, this library will use Google Play Services version 9.6.1 and Android
 <set name="supportLibraryVersion" value="24.0.0" />
 ```
 
+If you want to use the highest version available on your SDK, you can set
+```xml
+<set name="playServicesVersion" value="+" />
+<set name="supportLibraryVersion" value="+" />
+```
+
 ## Choosing libraries
 
 Instead of importing the entire library, you can choose which parts of the Google Play Services and Android Support Libraries you need. To enable features, pick one or more lines from this list, and add them to your project.xml file:
