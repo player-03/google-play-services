@@ -13,7 +13,7 @@ By default, this library will use Google Play Services version 9.6.1 and Android
 <set name="supportLibraryVersion" value="24.0.0" />
 ```
 
-This is this is [discouraged](http://blog.danlew.net/2015/09/09/dont-use-dynamic-versions-for-your-dependencies/), but instead of specifying an exact version, you can add a plus sign to use the latest available version:
+This is [discouraged](http://blog.danlew.net/2015/09/09/dont-use-dynamic-versions-for-your-dependencies/), but instead of specifying an exact version, you can add a plus sign to use the latest available version:
 
 ```xml
 <!-- Use the latest version. -->
