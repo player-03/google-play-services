@@ -13,6 +13,17 @@ By default, this library will use Google Play Services version 9.6.1 and Android
 <set name="supportLibraryVersion" value="24.0.0" />
 ```
 
+This is [discouraged](http://blog.danlew.net/2015/09/09/dont-use-dynamic-versions-for-your-dependencies/), but instead of specifying an exact version, you can add a plus sign to use the latest available version:
+
+```xml
+<!-- Use the latest version. -->
+<set name="playServicesVersion" value="+" />
+<!-- "Pin" the major version to 24 and the minor version to 0, but use the latest patch. -->
+<set name="supportLibraryVersion" value="24.0.+" />
+```
+
+Note that this will only look at the library versions you downloaded through the Android SDK Manager, so it isn't a completely automatic process.
+
 ## Choosing libraries
 
 Instead of importing the entire library, you can choose which parts of the Google Play Services and Android Support Libraries you need. To enable features, pick one or more lines from this list, and add them to your project.xml file:
