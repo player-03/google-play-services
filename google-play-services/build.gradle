@@ -52,6 +52,8 @@ dependencies {
 	compile 'com.google.android.gms:play-services-wallet:::SET_PLAY_SERVICES_VERSION::'
 	::end::::if SET_ANDROID_WEAR::
 	compile 'com.google.android.gms:play-services-wearable:::SET_PLAY_SERVICES_VERSION::'
+	::end::::if SET_PLAY_SERVICES_BASEMENT::
+	compile 'com.google.android.gms:play-services-basement:::SET_PLAY_SERVICES_VERSION::'
 	::end::::if (SET_SUPPORT_V4 || SET_SUPPORT_V_4)::
 	compile 'com.android.support:support-v4:::SET_SUPPORT_LIBRARY_VERSION::'
 	::end::::if SET_SUPPORT_COMPAT::
